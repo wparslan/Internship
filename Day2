@@ -1,0 +1,104 @@
+<?php
+// Day-2 Task
+
+//Day-2 Task-1 START
+//array with foreach
+echo "<h1>Task-1 Arrays</h1>";
+echo "<h3>Array with for each</h3>";
+$day2_ArrayName = array('[1 2 3]', '[4 5 6]', '[7 8 9]', ); 
+foreach ($day2_ArrayName as $value) {
+  echo "$value <br>";
+}
+
+//1d-Array START
+echo "<h3>1Demensional Array example</h3>";
+$day2_arr = array(1, 2, 3, 4, 5, 6, 7, 8, 9);
+$index = 0;
+for ($x = 0; $x < 3; $x++){
+    echo "[";
+    for($y = 0; $y < 3; $y++){
+        echo $day2_arr[$index++];
+    }
+    echo "]<br>";
+}
+//1d-Array END
+
+//2d-Array START
+echo "<h3>2Demensional Array example</h3>";
+$day2_arr2 = array (
+    array( 1, 2, 3 ),
+    array( 4, 5, 6 ),
+    array( 7, 8, 9 ),  
+  ); // this how we declare 2-d array
+  for ($row = 0; $row < 3; $row++) {
+    echo ("[");
+        for ($col = 0; $col < 3; $col++) {
+         echo  $day2_arr2[$row][$col];  
+        }
+    echo ("]<br>");
+  }
+  //2d-Array END
+//Day-2 Task-1 END
+
+//Day-2 Task-2 START
+echo "<h1>Index and Associative Array</h1>";
+$day2_IndArr = array(11,33,55,66,"WpBrigade");
+echo $day2_IndArr[0] . "<br>";
+echo $day2_IndArr[1] . "<br>";
+echo $day2_IndArr[2] . "<br>";
+echo $day2_IndArr[3] . "<br>";
+echo $day2_IndArr[4] . "<br>";
+
+//Index array with for loop
+echo "<h3>Index Array with Loop</h3>";
+for($i=0;$i<=4;$i++){
+    echo $day2_IndArr[$i] . "<br>";
+}
+
+echo "<br>";
+$day2_color = ["red", "blue", "yellow"]; //other way to decalre the array
+for ($x = 0; $x < count($day2_color); $x++) { //you dont need to count the arry with "count" fuction
+    echo $day2_color[$x];
+    echo "<br>";
+}
+
+#associative array
+$age = array("Zain" => 22, "Sami" => 21, "Asim" => 23);
+
+echo "<pre>";//defines preformatted text
+print_r($age); //print all array with 1 line of code 
+echo "<pre>";
+
+//another eg easy and lengthy way to display array
+echo $age["Zain"] . "<br>";
+echo $age["Sami"] . "<br>";
+echo $age["Asim"] . "<br>";
+//Day-2 Task-2 END
+
+//Day-2 Task-3 START
+// Foreach and while loop examples
+
+//while loop
+echo "<h3>WHile loop</h3>";
+$day2_MyLoop = 1;
+
+while($day2_MyLoop <= 5) {
+  echo "The number is: $day2_MyLoop <br>";
+  $day2_MyLoop++;
+}
+
+//foreach loop start
+echo "<h3>forreach</h3>";
+$day2_fri_age = array("Zain"=>"22", "Mubariz"=>"22", "Ebtasam ur rehman"=>"21" , "Danish" => "23");
+
+foreach($day2_fri_age as $name=> $age) {
+  echo "$name = $age<br>";
+}
+//Day-2 Task-3 START
+?>
+
+<!-- My Question to team lead:
+1)Arrays
+2)Y should not use nested loops
+
+  -->
