@@ -1,27 +1,38 @@
+<!------------------------php code ------------------------>
 <?php
- //declare email as string
-$email ="zain.wpbrigade@gmail.com";  
-$pwd="123";
+session_start();
 
-session_start();  // creating session
+if ($_SESSION["status"] != true){ //if you type wrong password this statement will show the login page,, this statement link with "login page's if condition"
+    header("Location: login.php"); // this statement link to login page
+}
+?>
 
-if(isset($_SESSION['email'])){   //  function returns true if the variable exists and is not NULL, otherwise it returns false.
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    echo "<h1>WpBrigade</h1>";  
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    echo "<br><a href='logout.php'><input type=button value=logout name=logout></a>";
-} 
-else {
-    if ($_POST['email'] == $email && $_POST['pwd'] == $pwd) { // In this function,if ur email and password are correct than this statement will execute otherwise this statement will not run
+    <title>Welcome Page</title>
+  </head>
 
-        $_SESSION['email'] = $email;  
+  <body>
+    <h2 class="mt-2">Hello, Your Email-id is : <?php echo $_SESSION["email_id"] ?></h2>
+    <br>
+    <form action="welcome.php" method="post">
+    <input class="btn btn-primary" type="submit"  name="logout" value="Logout!">
+    </form>
+    
+  </body>
+</html>
 
-        echo "<script> location.href='welcome.php'</script>";  // javascript code to open the welcome page
-    } 
-    else {
-        echo "<script>alert('username or paasword incorrect!')</script>"; // if entered password is wrong than this will show
-
-echo "<script> location.href='login.php'</script>";  // when this statement run login page will display 
-    }
+<!------------------------php code ------------------------>
+<?php
+if(isset($_POST["logout"])){ // if user click the logout button, session will unset and page will go to login page
+    header("Location: logout.php");
 }
 ?>
