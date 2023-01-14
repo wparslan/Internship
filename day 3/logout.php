@@ -1,18 +1,8 @@
 <?php
 session_start();
+session_unset();  // session unset and your id will logout
 
-if(isset($_SESSION['email'])){
+header("Location: login.php");  // after logout, login page will display
 
-session_destroy();  //here session will distory if isset function retrun true
-//there are two type to open the new page(tab)
-// you can use javascript or header(function)
-/* echo "<script>location.href='login.php'</script>"; */  
-header("location:login.php");  // open login page when you logout
-}
-else{
-   
-/* echo "<script> location.href='login.php'</script>"; */
-header("location:login.php");// open login page
 
-}
 ?>
