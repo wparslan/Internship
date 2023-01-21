@@ -58,13 +58,18 @@ function day7_calcultor()// calculate function is start here
         } 
         //multiplication operation performs here
         else if ($oprnd == "/") {
-            $ans = $day7_num1 / $day7_num2;
-            echo "<h3><center>Your Answer is $ans</center><h3>";
+            if($day7_num2==0){
+                echo "<script>alert('Please Enter valid input')</script>";
+            echo "<script>location.href='day7.php'</script>";
+            } else {
+                $ans = $day7_num1 / $day7_num2;
+                echo "<h3><center>Your Answer is $ans</center><h3>";
+            }
         } 
         // if you enter empty value then this function will perform
         else if ($oprnd == "-Select operator-") {
             echo "<script>alert('Empty Values!Enter Values for calculation')</script>";
-        echo "<script>location.href='calculator.php'</script>";
+            echo "<script>location.href='day7.php'</script>";
         }
     }
 }
